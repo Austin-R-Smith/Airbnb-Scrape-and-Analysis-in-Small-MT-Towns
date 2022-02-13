@@ -1,0 +1,141 @@
+,ID Group,Group,ID Industry,Industry,ID Year,Year,ID State,State,Workforce by Industry and Gender,Workforce by Industry and Gender Moe,Geography,ID Geography,Slug Geography
+0,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2019,2019,04000US30,Montana,20,28.79236009777594,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+1,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2019,2019,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+2,1,Construction (Group),2,Construction,2019,2019,04000US30,Montana,23,24.166091947189148,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+3,2,Manufacturing (Group),3,Manufacturing,2019,2019,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+4,3,Wholesale Trade (Group),4,Wholesale Trade,2019,2019,04000US30,Montana,10,18.027756377319946,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+5,4,Retail Trade (Group),5,Retail Trade,2019,2019,04000US30,Montana,74,43.73785545725807,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+6,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2019,2019,04000US30,Montana,74,40.311288741492746,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+7,5,"Transportation & Warehousing, & Utilities",7,Utilities,2019,2019,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+8,6,Information (Group),8,Information,2019,2019,04000US30,Montana,10,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+9,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2019,2019,04000US30,Montana,21,23.259406699226012,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+10,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2019,2019,04000US30,Montana,13,19.72308292331602,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+11,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2019,2019,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+12,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2019,2019,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+13,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2019,2019,04000US30,Montana,10,19.72308292331602,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+14,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2019,2019,04000US30,Montana,21,31.78049716414141,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+15,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2019,2019,04000US30,Montana,12,10.295630140986999,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+16,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2019,2019,04000US30,Montana,25,30.083217912982644,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+17,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2019,2019,04000US30,Montana,228,80.62257748298549,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+18,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2019,2019,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+19,12,Public Administration (Group),19,Public Administration,2019,2019,04000US30,Montana,16,26.0,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+20,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2018,2018,04000US30,Montana,12,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+21,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2018,2018,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+22,1,Construction (Group),2,Construction,2018,2018,04000US30,Montana,37,28.017851452243804,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+23,2,Manufacturing (Group),3,Manufacturing,2018,2018,04000US30,Montana,9,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+24,3,Wholesale Trade (Group),4,Wholesale Trade,2018,2018,04000US30,Montana,11,19.72308292331602,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+25,4,Retail Trade (Group),5,Retail Trade,2018,2018,04000US30,Montana,99,44.598206241955516,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+26,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2018,2018,04000US30,Montana,49,34.71310991541956,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+27,5,"Transportation & Warehousing, & Utilities",7,Utilities,2018,2018,04000US30,Montana,4,11.180339887498949,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+28,6,Information (Group),8,Information,2018,2018,04000US30,Montana,10,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+29,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2018,2018,04000US30,Montana,12,18.027756377319946,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+30,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2018,2018,04000US30,Montana,13,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+31,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2018,2018,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+32,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2018,2018,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+33,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2018,2018,04000US30,Montana,10,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+34,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2018,2018,04000US30,Montana,17,20.248456731316587,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+35,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2018,2018,04000US30,Montana,14,10.770329614269007,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+36,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2018,2018,04000US30,Montana,40,30.610455730027937,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+37,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2018,2018,04000US30,Montana,249,85.27602242131137,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+38,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2018,2018,04000US30,Montana,11,19.72308292331602,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+39,12,Public Administration (Group),19,Public Administration,2018,2018,04000US30,Montana,16,19.4164878389476,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+40,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2017,2017,04000US30,Montana,15,25.079872407968907,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+41,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2017,2017,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+42,1,Construction (Group),2,Construction,2017,2017,04000US30,Montana,49,38.07886552931954,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+43,2,Manufacturing (Group),3,Manufacturing,2017,2017,04000US30,Montana,8,16.401219466856723,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+44,3,Wholesale Trade (Group),4,Wholesale Trade,2017,2017,04000US30,Montana,22,23.345235059857504,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+45,4,Retail Trade (Group),5,Retail Trade,2017,2017,04000US30,Montana,90,47.4236228055175,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+46,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2017,2017,04000US30,Montana,53,33.301651610693426,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+47,5,"Transportation & Warehousing, & Utilities",7,Utilities,2017,2017,04000US30,Montana,3,11.180339887498949,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+48,6,Information (Group),8,Information,2017,2017,04000US30,Montana,10,18.027756377319946,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+49,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2017,2017,04000US30,Montana,9,18.027756377319946,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+50,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2017,2017,04000US30,Montana,29,27.85677655436824,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+51,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2017,2017,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+52,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2017,2017,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+53,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2017,2017,04000US30,Montana,24,21.4009345590327,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+54,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2017,2017,04000US30,Montana,14,25.079872407968907,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+55,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2017,2017,04000US30,Montana,24,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+56,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2017,2017,04000US30,Montana,40,31.622776601683793,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+57,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2017,2017,04000US30,Montana,253,85.42833253669417,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+58,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2017,2017,04000US30,Montana,10,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+59,12,Public Administration (Group),19,Public Administration,2017,2017,04000US30,Montana,12,16.492422502470642,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+60,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2016,2016,04000US30,Montana,10,24.166091947189148,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+61,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2016,2016,04000US30,Montana,3,11.180339887498949,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+62,1,Construction (Group),2,Construction,2016,2016,04000US30,Montana,49,33.54101966249684,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+63,2,Manufacturing (Group),3,Manufacturing,2016,2016,04000US30,Montana,8,16.401219466856723,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+64,3,Wholesale Trade (Group),4,Wholesale Trade,2016,2016,04000US30,Montana,14,19.72308292331602,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+65,4,Retail Trade (Group),5,Retail Trade,2016,2016,04000US30,Montana,96,41.012193308819754,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+66,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2016,2016,04000US30,Montana,54,34.20526275297414,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+67,5,"Transportation & Warehousing, & Utilities",7,Utilities,2016,2016,04000US30,Montana,5,11.6619037896906,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+68,6,Information (Group),8,Information,2016,2016,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+69,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2016,2016,04000US30,Montana,12,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+70,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2016,2016,04000US30,Montana,26,27.85677655436824,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+71,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2016,2016,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+72,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2016,2016,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+73,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2016,2016,04000US30,Montana,25,24.08318915758459,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+74,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2016,2016,04000US30,Montana,7,12.206555615733702,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+75,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2016,2016,04000US30,Montana,24,19.72308292331602,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+76,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2016,2016,04000US30,Montana,34,26.90724809414742,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+77,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2016,2016,04000US30,Montana,280,90.44335243676011,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+78,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2016,2016,04000US30,Montana,10,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+79,12,Public Administration (Group),19,Public Administration,2016,2016,04000US30,Montana,13,15.524174696260024,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+80,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2015,2015,04000US30,Montana,12,26.925824035672516,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+81,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2015,2015,04000US30,Montana,3,10.770329614269007,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+82,1,Construction (Group),2,Construction,2015,2015,04000US30,Montana,52,36.24913792078371,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+83,2,Manufacturing (Group),3,Manufacturing,2015,2015,04000US30,Montana,8,16.401219466856723,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+84,3,Wholesale Trade (Group),4,Wholesale Trade,2015,2015,04000US30,Montana,13,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+85,4,Retail Trade (Group),5,Retail Trade,2015,2015,04000US30,Montana,143,58.60034129593445,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+86,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2015,2015,04000US30,Montana,21,17.464249196572982,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+87,5,"Transportation & Warehousing, & Utilities",7,Utilities,2015,2015,04000US30,Montana,4,12.806248474865697,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+88,6,Information (Group),8,Information,2015,2015,04000US30,Montana,10,18.027756377319946,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+89,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2015,2015,04000US30,Montana,10,20.591260281973998,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+90,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2015,2015,04000US30,Montana,18,21.470910553583888,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+91,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2015,2015,04000US30,Montana,9,18.027756377319946,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+92,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2015,2015,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+93,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2015,2015,04000US30,Montana,32,25.961509971494337,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+94,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2015,2015,04000US30,Montana,16,16.1245154965971,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+95,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2015,2015,04000US30,Montana,27,21.93171219946131,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+96,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2015,2015,04000US30,Montana,40,29.206163733020464,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+97,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2015,2015,04000US30,Montana,280,101.60708636704432,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+98,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2015,2015,04000US30,Montana,27,24.413111231467404,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+99,12,Public Administration (Group),19,Public Administration,2015,2015,04000US30,Montana,15,15.652475842498529,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+100,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2014,2014,04000US30,Montana,18,39.293765408777,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+101,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2014,2014,04000US30,Montana,3,11.180339887498949,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+102,1,Construction (Group),2,Construction,2014,2014,04000US30,Montana,67,42.379240200834175,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+103,2,Manufacturing (Group),3,Manufacturing,2014,2014,04000US30,Montana,8,16.401219466856723,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+104,3,Wholesale Trade (Group),4,Wholesale Trade,2014,2014,04000US30,Montana,14,19.72308292331602,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+105,4,Retail Trade (Group),5,Retail Trade,2014,2014,04000US30,Montana,126,56.08029957123981,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+106,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2014,2014,04000US30,Montana,16,9.433981132056603,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+107,5,"Transportation & Warehousing, & Utilities",7,Utilities,2014,2014,04000US30,Montana,6,13.45362404707371,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+108,6,Information (Group),8,Information,2014,2014,04000US30,Montana,10,18.027756377319946,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+109,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2014,2014,04000US30,Montana,10,19.72308292331602,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+110,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2014,2014,04000US30,Montana,15,21.470910553583888,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+111,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2014,2014,04000US30,Montana,9,17.204650534085253,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+112,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2014,2014,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+113,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2014,2014,04000US30,Montana,42,29.832867780352593,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+114,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2014,2014,04000US30,Montana,20,20.518284528683193,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+115,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2014,2014,04000US30,Montana,24,22.561028345356956,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+116,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2014,2014,04000US30,Montana,44,33.421549934136806,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+117,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2014,2014,04000US30,Montana,269,100.16985574512924,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+118,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2014,2014,04000US30,Montana,27,25.238858928247925,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+119,12,Public Administration (Group),19,Public Administration,2014,2014,04000US30,Montana,25,21.260291625469296,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+120,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2013,2013,04000US30,Montana,108,192.93781381574738,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+121,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2013,2013,04000US30,Montana,3,11.180339887498949,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+122,1,Construction (Group),2,Construction,2013,2013,04000US30,Montana,59,46.09772228646443,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+123,2,Manufacturing (Group),3,Manufacturing,2013,2013,04000US30,Montana,22,34.48187929913333,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+124,3,Wholesale Trade (Group),4,Wholesale Trade,2013,2013,04000US30,Montana,14,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+125,4,Retail Trade (Group),5,Retail Trade,2013,2013,04000US30,Montana,90,42.8018691180654,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+126,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2013,2013,04000US30,Montana,20,11.180339887498949,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+127,5,"Transportation & Warehousing, & Utilities",7,Utilities,2013,2013,04000US30,Montana,3,11.6619037896906,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+128,6,Information (Group),8,Information,2013,2013,04000US30,Montana,9,17.204650534085253,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+129,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2013,2013,04000US30,Montana,11,18.867962264113206,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+130,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2013,2013,04000US30,Montana,17,23.259406699226012,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+131,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2013,2013,04000US30,Montana,10,18.027756377319946,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+132,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2013,2013,04000US30,Montana,0,14.142135623730951,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+133,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2013,2013,04000US30,Montana,58,36.359317925395686,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+134,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2013,2013,04000US30,Montana,21,20.518284528683193,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+135,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2013,2013,04000US30,Montana,22,25.079872407968907,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+136,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2013,2013,04000US30,Montana,24,23.853720883753123,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+137,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2013,2013,04000US30,Montana,257,94.04786015641186,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+138,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2013,2013,04000US30,Montana,18,19.1049731745428,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt
+139,12,Public Administration (Group),19,Public Administration,2013,2013,04000US30,Montana,31,27.459060435491963,"West Yellowstone, MT",16000US3079525,west-yellowstone-mt

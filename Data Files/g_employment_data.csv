@@ -1,0 +1,141 @@
+,ID Group,Group,ID Industry,Industry,ID Year,Year,ID State,State,Workforce by Industry and Gender,Workforce by Industry and Gender Moe,Geography,ID Geography,Slug Geography
+0,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2019,2019,04000US30,Montana,16,17.464249196572982,"Gardiner, MT",16000US3029950,gardiner-mt
+1,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2019,2019,04000US30,Montana,4,11.6619037896906,"Gardiner, MT",16000US3029950,gardiner-mt
+2,1,Construction (Group),2,Construction,2019,2019,04000US30,Montana,12,9.848857801796104,"Gardiner, MT",16000US3029950,gardiner-mt
+3,2,Manufacturing (Group),3,Manufacturing,2019,2019,04000US30,Montana,13,22.360679774997898,"Gardiner, MT",16000US3029950,gardiner-mt
+4,3,Wholesale Trade (Group),4,Wholesale Trade,2019,2019,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+5,4,Retail Trade (Group),5,Retail Trade,2019,2019,04000US30,Montana,105,68.00735254367721,"Gardiner, MT",16000US3029950,gardiner-mt
+6,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2019,2019,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+7,5,"Transportation & Warehousing, & Utilities",7,Utilities,2019,2019,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+8,6,Information (Group),8,Information,2019,2019,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+9,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2019,2019,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+10,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2019,2019,04000US30,Montana,12,21.470910553583888,"Gardiner, MT",16000US3029950,gardiner-mt
+11,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2019,2019,04000US30,Montana,24,25.495097567963924,"Gardiner, MT",16000US3029950,gardiner-mt
+12,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2019,2019,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+13,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2019,2019,04000US30,Montana,41,37.73592452822641,"Gardiner, MT",16000US3029950,gardiner-mt
+14,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2019,2019,04000US30,Montana,51,47.4236228055175,"Gardiner, MT",16000US3029950,gardiner-mt
+15,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2019,2019,04000US30,Montana,3,10.770329614269007,"Gardiner, MT",16000US3029950,gardiner-mt
+16,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2019,2019,04000US30,Montana,79,42.720018726587654,"Gardiner, MT",16000US3029950,gardiner-mt
+17,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2019,2019,04000US30,Montana,175,85.42833253669417,"Gardiner, MT",16000US3029950,gardiner-mt
+18,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2019,2019,04000US30,Montana,44,33.01514803843836,"Gardiner, MT",16000US3029950,gardiner-mt
+19,12,Public Administration (Group),19,Public Administration,2019,2019,04000US30,Montana,62,38.07886552931954,"Gardiner, MT",16000US3029950,gardiner-mt
+20,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2018,2018,04000US30,Montana,11,12.083045973594574,"Gardiner, MT",16000US3029950,gardiner-mt
+21,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2018,2018,04000US30,Montana,6,12.206555615733702,"Gardiner, MT",16000US3029950,gardiner-mt
+22,1,Construction (Group),2,Construction,2018,2018,04000US30,Montana,13,10.295630140986999,"Gardiner, MT",16000US3029950,gardiner-mt
+23,2,Manufacturing (Group),3,Manufacturing,2018,2018,04000US30,Montana,11,21.470910553583888,"Gardiner, MT",16000US3029950,gardiner-mt
+24,3,Wholesale Trade (Group),4,Wholesale Trade,2018,2018,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+25,4,Retail Trade (Group),5,Retail Trade,2018,2018,04000US30,Montana,204,141.0319112825179,"Gardiner, MT",16000US3029950,gardiner-mt
+26,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2018,2018,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+27,5,"Transportation & Warehousing, & Utilities",7,Utilities,2018,2018,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+28,6,Information (Group),8,Information,2018,2018,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+29,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2018,2018,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+30,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2018,2018,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+31,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2018,2018,04000US30,Montana,21,19.4164878389476,"Gardiner, MT",16000US3029950,gardiner-mt
+32,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2018,2018,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+33,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2018,2018,04000US30,Montana,32,28.30194339616981,"Gardiner, MT",16000US3029950,gardiner-mt
+34,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2018,2018,04000US30,Montana,50,27.586228448267445,"Gardiner, MT",16000US3029950,gardiner-mt
+35,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2018,2018,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+36,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2018,2018,04000US30,Montana,78,35.34119409414458,"Gardiner, MT",16000US3029950,gardiner-mt
+37,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2018,2018,04000US30,Montana,161,78.44743462982075,"Gardiner, MT",16000US3029950,gardiner-mt
+38,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2018,2018,04000US30,Montana,16,18.973665961010276,"Gardiner, MT",16000US3029950,gardiner-mt
+39,12,Public Administration (Group),19,Public Administration,2018,2018,04000US30,Montana,71,39.20459156782532,"Gardiner, MT",16000US3029950,gardiner-mt
+40,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2017,2017,04000US30,Montana,14,17.464249196572982,"Gardiner, MT",16000US3029950,gardiner-mt
+41,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2017,2017,04000US30,Montana,3,11.6619037896906,"Gardiner, MT",16000US3029950,gardiner-mt
+42,1,Construction (Group),2,Construction,2017,2017,04000US30,Montana,15,9.848857801796104,"Gardiner, MT",16000US3029950,gardiner-mt
+43,2,Manufacturing (Group),3,Manufacturing,2017,2017,04000US30,Montana,11,19.72308292331602,"Gardiner, MT",16000US3029950,gardiner-mt
+44,3,Wholesale Trade (Group),4,Wholesale Trade,2017,2017,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+45,4,Retail Trade (Group),5,Retail Trade,2017,2017,04000US30,Montana,183,146.70037491431302,"Gardiner, MT",16000US3029950,gardiner-mt
+46,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2017,2017,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+47,5,"Transportation & Warehousing, & Utilities",7,Utilities,2017,2017,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+48,6,Information (Group),8,Information,2017,2017,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+49,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2017,2017,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+50,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2017,2017,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+51,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2017,2017,04000US30,Montana,18,17.08800749063506,"Gardiner, MT",16000US3029950,gardiner-mt
+52,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2017,2017,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+53,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2017,2017,04000US30,Montana,28,29.5296461204668,"Gardiner, MT",16000US3029950,gardiner-mt
+54,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2017,2017,04000US30,Montana,78,38.89730067755345,"Gardiner, MT",16000US3029950,gardiner-mt
+55,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2017,2017,04000US30,Montana,5,5.385164807134504,"Gardiner, MT",16000US3029950,gardiner-mt
+56,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2017,2017,04000US30,Montana,59,25.553864678361276,"Gardiner, MT",16000US3029950,gardiner-mt
+57,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2017,2017,04000US30,Montana,148,58.309518948453,"Gardiner, MT",16000US3029950,gardiner-mt
+58,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2017,2017,04000US30,Montana,24,18.384776310850235,"Gardiner, MT",16000US3029950,gardiner-mt
+59,12,Public Administration (Group),19,Public Administration,2017,2017,04000US30,Montana,68,36.400549446402586,"Gardiner, MT",16000US3029950,gardiner-mt
+60,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2016,2016,04000US30,Montana,21,22.67156809750927,"Gardiner, MT",16000US3029950,gardiner-mt
+61,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2016,2016,04000US30,Montana,4,11.180339887498949,"Gardiner, MT",16000US3029950,gardiner-mt
+62,1,Construction (Group),2,Construction,2016,2016,04000US30,Montana,3,4.242640687119286,"Gardiner, MT",16000US3029950,gardiner-mt
+63,2,Manufacturing (Group),3,Manufacturing,2016,2016,04000US30,Montana,6,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+64,3,Wholesale Trade (Group),4,Wholesale Trade,2016,2016,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+65,4,Retail Trade (Group),5,Retail Trade,2016,2016,04000US30,Montana,210,160.3277892319357,"Gardiner, MT",16000US3029950,gardiner-mt
+66,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2016,2016,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+67,5,"Transportation & Warehousing, & Utilities",7,Utilities,2016,2016,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+68,6,Information (Group),8,Information,2016,2016,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+69,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2016,2016,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+70,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2016,2016,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+71,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2016,2016,04000US30,Montana,15,15.231546211727816,"Gardiner, MT",16000US3029950,gardiner-mt
+72,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2016,2016,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+73,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2016,2016,04000US30,Montana,16,16.970562748477143,"Gardiner, MT",16000US3029950,gardiner-mt
+74,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2016,2016,04000US30,Montana,65,38.28837943815329,"Gardiner, MT",16000US3029950,gardiner-mt
+75,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2016,2016,04000US30,Montana,6,7.211102550927979,"Gardiner, MT",16000US3029950,gardiner-mt
+76,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2016,2016,04000US30,Montana,68,34.539832078341085,"Gardiner, MT",16000US3029950,gardiner-mt
+77,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2016,2016,04000US30,Montana,159,62.48199740725323,"Gardiner, MT",16000US3029950,gardiner-mt
+78,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2016,2016,04000US30,Montana,44,27.658633371878658,"Gardiner, MT",16000US3029950,gardiner-mt
+79,12,Public Administration (Group),19,Public Administration,2016,2016,04000US30,Montana,62,39.11521443121589,"Gardiner, MT",16000US3029950,gardiner-mt
+80,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2015,2015,04000US30,Montana,26,34.20526275297414,"Gardiner, MT",16000US3029950,gardiner-mt
+81,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2015,2015,04000US30,Montana,2,11.180339887498949,"Gardiner, MT",16000US3029950,gardiner-mt
+82,1,Construction (Group),2,Construction,2015,2015,04000US30,Montana,9,7.615773105863908,"Gardiner, MT",16000US3029950,gardiner-mt
+83,2,Manufacturing (Group),3,Manufacturing,2015,2015,04000US30,Montana,4,12.806248474865697,"Gardiner, MT",16000US3029950,gardiner-mt
+84,3,Wholesale Trade (Group),4,Wholesale Trade,2015,2015,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+85,4,Retail Trade (Group),5,Retail Trade,2015,2015,04000US30,Montana,230,175.55910685578235,"Gardiner, MT",16000US3029950,gardiner-mt
+86,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2015,2015,04000US30,Montana,6,7.0710678118654755,"Gardiner, MT",16000US3029950,gardiner-mt
+87,5,"Transportation & Warehousing, & Utilities",7,Utilities,2015,2015,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+88,6,Information (Group),8,Information,2015,2015,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+89,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2015,2015,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+90,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2015,2015,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+91,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2015,2015,04000US30,Montana,18,15.652475842498529,"Gardiner, MT",16000US3029950,gardiner-mt
+92,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2015,2015,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+93,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2015,2015,04000US30,Montana,6,5.8309518948453,"Gardiner, MT",16000US3029950,gardiner-mt
+94,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2015,2015,04000US30,Montana,70,36.87817782917155,"Gardiner, MT",16000US3029950,gardiner-mt
+95,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2015,2015,04000US30,Montana,4,4.47213595499958,"Gardiner, MT",16000US3029950,gardiner-mt
+96,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2015,2015,04000US30,Montana,87,47.92702786528704,"Gardiner, MT",16000US3029950,gardiner-mt
+97,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2015,2015,04000US30,Montana,166,68.79680225126747,"Gardiner, MT",16000US3029950,gardiner-mt
+98,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2015,2015,04000US30,Montana,34,21.470910553583888,"Gardiner, MT",16000US3029950,gardiner-mt
+99,12,Public Administration (Group),19,Public Administration,2015,2015,04000US30,Montana,70,42.485291572496,"Gardiner, MT",16000US3029950,gardiner-mt
+100,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2014,2014,04000US30,Montana,37,29.832867780352597,"Gardiner, MT",16000US3029950,gardiner-mt
+101,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2014,2014,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+102,1,Construction (Group),2,Construction,2014,2014,04000US30,Montana,6,11.6619037896906,"Gardiner, MT",16000US3029950,gardiner-mt
+103,2,Manufacturing (Group),3,Manufacturing,2014,2014,04000US30,Montana,4,12.806248474865697,"Gardiner, MT",16000US3029950,gardiner-mt
+104,3,Wholesale Trade (Group),4,Wholesale Trade,2014,2014,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+105,4,Retail Trade (Group),5,Retail Trade,2014,2014,04000US30,Montana,237,194.79476378999513,"Gardiner, MT",16000US3029950,gardiner-mt
+106,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2014,2014,04000US30,Montana,8,8.485281374238571,"Gardiner, MT",16000US3029950,gardiner-mt
+107,5,"Transportation & Warehousing, & Utilities",7,Utilities,2014,2014,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+108,6,Information (Group),8,Information,2014,2014,04000US30,Montana,4,11.180339887498949,"Gardiner, MT",16000US3029950,gardiner-mt
+109,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2014,2014,04000US30,Montana,3,11.180339887498949,"Gardiner, MT",16000US3029950,gardiner-mt
+110,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2014,2014,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+111,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2014,2014,04000US30,Montana,8,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+112,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2014,2014,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+113,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2014,2014,04000US30,Montana,9,10.0,"Gardiner, MT",16000US3029950,gardiner-mt
+114,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2014,2014,04000US30,Montana,84,36.124783736376884,"Gardiner, MT",16000US3029950,gardiner-mt
+115,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2014,2014,04000US30,Montana,8,9.219544457292887,"Gardiner, MT",16000US3029950,gardiner-mt
+116,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2014,2014,04000US30,Montana,117,71.47027354082255,"Gardiner, MT",16000US3029950,gardiner-mt
+117,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2014,2014,04000US30,Montana,164,68.26419266350405,"Gardiner, MT",16000US3029950,gardiner-mt
+118,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2014,2014,04000US30,Montana,31,22.360679774997898,"Gardiner, MT",16000US3029950,gardiner-mt
+119,12,Public Administration (Group),19,Public Administration,2014,2014,04000US30,Montana,73,42.379240200834175,"Gardiner, MT",16000US3029950,gardiner-mt
+120,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",0,"Agriculture, Forestry, Fishing & Hunting",2013,2013,04000US30,Montana,24,22.62741699796952,"Gardiner, MT",16000US3029950,gardiner-mt
+121,0,"Agriculture, Forestry, Fishing & Hunting, & Mining",1,"Mining, Quarrying, & Oil & Gas Extraction",2013,2013,04000US30,Montana,5,12.206555615733702,"Gardiner, MT",16000US3029950,gardiner-mt
+122,1,Construction (Group),2,Construction,2013,2013,04000US30,Montana,7,12.806248474865697,"Gardiner, MT",16000US3029950,gardiner-mt
+123,2,Manufacturing (Group),3,Manufacturing,2013,2013,04000US30,Montana,5,12.806248474865697,"Gardiner, MT",16000US3029950,gardiner-mt
+124,3,Wholesale Trade (Group),4,Wholesale Trade,2013,2013,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+125,4,Retail Trade (Group),5,Retail Trade,2013,2013,04000US30,Montana,43,28.844410203711917,"Gardiner, MT",16000US3029950,gardiner-mt
+126,5,"Transportation & Warehousing, & Utilities",6,Transportation & Warehousing,2013,2013,04000US30,Montana,7,7.810249675906654,"Gardiner, MT",16000US3029950,gardiner-mt
+127,5,"Transportation & Warehousing, & Utilities",7,Utilities,2013,2013,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+128,6,Information (Group),8,Information,2013,2013,04000US30,Montana,4,11.6619037896906,"Gardiner, MT",16000US3029950,gardiner-mt
+129,7,"Finance & Insurance, & Real Estate & Rental & Leasing",9,Finance & Insurance,2013,2013,04000US30,Montana,5,11.6619037896906,"Gardiner, MT",16000US3029950,gardiner-mt
+130,7,"Finance & Insurance, & Real Estate & Rental & Leasing",10,Real Estate & Rental & Leasing,2013,2013,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+131,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",11,"Professional, Scientific, & Technical Services",2013,2013,04000US30,Montana,21,26.0,"Gardiner, MT",16000US3029950,gardiner-mt
+132,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",12,Management of Companies & Enterprises,2013,2013,04000US30,Montana,0,14.142135623730951,"Gardiner, MT",16000US3029950,gardiner-mt
+133,8,"Professional, Scientific, & Management, & Administrative & Waste Management Services",13,Administrative & Support & Waste Management Services,2013,2013,04000US30,Montana,11,9.899494936611665,"Gardiner, MT",16000US3029950,gardiner-mt
+134,9,"Educational Services, & Health Care & Social Assistance",14,Educational Services,2013,2013,04000US30,Montana,90,43.18564576337837,"Gardiner, MT",16000US3029950,gardiner-mt
+135,9,"Educational Services, & Health Care & Social Assistance",15,Health Care & Social Assistance,2013,2013,04000US30,Montana,11,9.219544457292887,"Gardiner, MT",16000US3029950,gardiner-mt
+136,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",16,"Arts, Entertainment, & Recreation",2013,2013,04000US30,Montana,146,68.87670143089025,"Gardiner, MT",16000US3029950,gardiner-mt
+137,10,"Arts, Entertainment, & Recreation, & Accommodation & Food Services",17,Accommodation & Food Services,2013,2013,04000US30,Montana,174,65.29931086925804,"Gardiner, MT",16000US3029950,gardiner-mt
+138,11,"Other Services, Except Public Administration (Group)",18,"Other Services, Except Public Administration",2013,2013,04000US30,Montana,34,25.942243542145693,"Gardiner, MT",16000US3029950,gardiner-mt
+139,12,Public Administration (Group),19,Public Administration,2013,2013,04000US30,Montana,64,38.626415831655926,"Gardiner, MT",16000US3029950,gardiner-mt

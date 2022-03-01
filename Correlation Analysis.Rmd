@@ -1,0 +1,168 @@
+---
+title: "Airbnb Correlation Analysis"
+output: html_document
+html_document:
+  toc: yes
+  toc_depth: 6
+  number_sections: yes
+  toc_float: yes
+  code_folding: hide
+  theme: flatly
+  code_download: yes
+author: "Austin Smith"
+date: "`r format(Sys.time(), '%d %B, %Y')`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+library(dbplyr)
+library(corrplot)
+library(Hmisc)
+library(ggpubr)
+```
+
+## Overview
+
+The purpose of this markdown is to run correlations between the estimated number of Airbnb listings per person in small towns across Montana and the following metrics:
+- Median household income
+- Median home value
+- Age distribution of population; i.e. the percentage of residents under 18, between 18 and 34, etc. 
+
+### Load Data and Visualize Basic Stats
+
+My first step in running the correlations is to read in the data sets and gain a general understanding of what it looks like. 
+
+The goal is to determine the relationship between the density of Airbnbs and age distribution, median household income, and median property values. If I were to run a correlation between, simply, the number of Airbnb listings and any of those values, it's likely that larger towns, by virtue of their size, would correlate with higher incomes and property values. Therefore (in excel), I divided the number of listings by the population of the town to render a "Listings per Person" measure for correlation analysis. I did this for every metric of listings that was collected - without zooming in on the map, with one zoom, with two zooms, for the average of those three methods, and for the average of the two zoom methods. 
+
+My best judgement, from looking at the way the Airbnb zoom tool functions, is that the average between the two zoom methods is likely the most accurate way to yield listings by town. However, I will also use the three-way to average in a second correlation, as I judge that is the second most accurate way to determine listings.  
+
+
+```{r cars}
+# read in the data files
+# this data set does not currently include age-related information
+df <- read_csv('merged_data.csv')
+head(df)
+```
+
+First, let's get a feel for the distribution of listings per person by town. 
+
+```{r}
+summary(df$AllMeanPop)
+summary(df$ZoomMeanPop)
+```
+
+If we take the mean listings between the three methods - no zoom, one zoom, and two zooms - we find that the number of listings per person ranges from 0 to 3.42 with a mean of .178 and a median of 0.052. If we, instead, consider the distribution of listings if we take the mean of the listings returned with one zoom and two zooms, the figures decreased, predictably: they range from 0 to 3.04 listings with a mean value of 0.134 and a median value of 0.022. 
+
+The histograms for each method are pictured below. 
+
+```{r, figures-side, fig.show='hold', out.width="50%"}
+
+hist(df$AllMeanPop,col="gray",breaks=30,main="3-Way Mean Airbnb Listings per Person",
+     xlab="Listings",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
+
+hist(df$ZoomMeanPop,col="gray",breaks=30,main="Zoom Mean Airbnb Listings per Person",
+     xlab="Listings",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
+```
+In both cases, the distribution is extremely skewed. In order to run a Pearson's correlation, the data should be normally distributed; a Spearman's correlation is likely to be the better option. But we'll also check if transforming the data shows any improvement. Below, I plot the log transformed histogram of the listing measures. 
+
+```{r, figures-side, fig.show='hold', out.width="50%"}
+
+hist(log10(df$AllMeanPop),breaks=20,col="gray",main="log(3-Way Mean Airbnb Listings per Person)",
+     xlab="log10(Listings)",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
+
+hist(log10(df$ZoomMeanPop),breaks=20,col="gray",main="log(Zoom Mean Airbnb Listings per Person)",
+     xlab="log10(Listings)",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
+```
+
+This transformation helped push the distribution closer to "normal", which enables us to run a Pearson's correlation using the transformed variables.   
+
+I will also plot median household income and median property values to determine if these variables are normally distributed. 
+
+```{r, figures-side, fig.show='hold', out.width="50%"}
+hist(df$income_value,breaks=20,col="gray",main="Median Household Income Values",
+     xlab="Income",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
+
+hist(df$property_value,breaks=20,col="gray",main="Median Property Values",
+     xlab="Property Value",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
+```
+Both distributions are right skewed, so - again - I'll take the log transformation with the hope that it will result in a more normal distribution. 
+
+```{r, figures-side, fig.show='hold', out.width="50%"}
+hist(log10(df$income_value),breaks=20,col="gray",main="log(Median Household Income Values)",
+     xlab="log(Income)",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
+
+hist(log10(df$property_value),breaks=20,col="gray",main="log(Median Property Values)",
+     xlab="log(Property Value)",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
+```
+The log transformation successfully removed any right skewness in the data's distribution. 
+
+### Test Assumptions for Pearson's Correlation
+
+There are five assumptions that must be met in order to run a valid Pearson's correlation. 
+
+1) The two variables should be measured at the interval or ratio level; all of my variables meet this assumption.
+2) There should be a linear relationship between the two variables; below, I will visualize scatterplots of my data to determine if this assumption is met.
+3) Both variables should be normally distributed; I will use the log transformations of all variables so this requirement is met.
+4) Each observation in the dataset should have a pair of values; this is the case, because each of my rows of data applies to a single town.
+5) There should be no extreme outliers in the dataset; I will determine if this is the case via the scatterplots below. 
+
+
+```{r, figures-side, fig.show='hold', out.width="50%"}
+# scatterplots of the two mean listing methods and income below
+
+plot(log10(AllMeanPop)~log10(income_value),data=df,main = "3-Way Mean", xlab="log(Income)", ylab = "log(3-Way Mean Listings)")
+
+plot(log10(ZoomMeanPop)~log10(income_value),data=df,main = "Zoom Mean", xlab="log(Income)", ylab = "log(Zoom Mean Listings)")
+
+```
+
+```{r, figures-side, fig.show='hold', out.width="50%"}
+# scatterplots of the two mean listing methods and property value below
+
+plot(log10(AllMeanPop)~log10(property_value),data=df,main = "3-Way Mean", xlab="log(Property Value)", ylab = "log(3-Way Mean Listings)")
+
+plot(log10(ZoomMeanPop)~log10(property_value),data=df,main = "Zoom Mean", xlab="log(Property Value)", ylab = "log(Zoom Mean Listings)")
+
+```
+The relationships between the variables do not appear to be linear. The income data, in particular, is randomly distributed. 
+
+RUH-ROH WHAT TO DO???
+
+### Run the Correlation Analysis
+
+```{r pressure, echo=FALSE}
+# run correlations
+# listings vs. income (NOT TRANSFORMED)
+cor(df$AllMeanPop, df$income_value)
+cor(df$ZoomMeanPop, df$income_value)
+
+ggscatter(df, x = "AllMeanPop", y = "income_value", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "All Mean Number of Listings per Person", ylab = "Income Value")
+
+ggscatter(df, x = "ZoomMeanPop", y = "income_value", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Zoom Mean Number of Listings per Person", ylab = "Income Value")
+
+
+# listings vs. property value (NOT TRANSFORMED)
+cor(df$AllMeanPop, df$property_value)
+cor(df$ZoomMeanPop, df$property_value)
+
+ggscatter(df, x = "AllMeanPop", y = "property_value", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "All Mean Number of Listings per Person", ylab = "Property Value")
+
+ggscatter(df, x = "ZoomMeanPop", y = "property_value", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Zoom Mean Number of Listings per Person", ylab = "Property Value")
+
+```
+
+

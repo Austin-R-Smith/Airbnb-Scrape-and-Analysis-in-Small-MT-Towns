@@ -23,146 +23,469 @@ library(Hmisc)
 library(ggpubr)
 ```
 
-## Overview
+# Overview
 
-The purpose of this markdown is to run correlations between the estimated number of Airbnb listings per person in small towns across Montana and the following metrics:
-- Median household income
-- Median home value
-- Age distribution of population; i.e. the percentage of residents under 18, between 18 and 34, etc. 
+The purpose of this markdown is to run correlations between the estimated number of Airbnb listings per person in small towns across Montana and the following metrics:Median household income, Median home value, Age distribution of population; i.e. the percentage of residents under 18, between 18 and 34, etc. 
+
+I'm curious what the effect of many vs. few Airbnbs has on a small town, so I restrict my dataset to towns that have at least one Airbnb listing. I also did some manual clean-up on the datasets prior to importing them. The Airbnb search results were a bit wonky for some towns as a result of how it displays listing results and how those results change when one zooms in. For example, a few very small towns reported upwards of three listings per person in the town, which was not actually the case. 
 
 ### Load Data and Visualize Basic Stats
 
 My first step in running the correlations is to read in the data sets and gain a general understanding of what it looks like. 
 
-The goal is to determine the relationship between the density of Airbnbs and age distribution, median household income, and median property values. If I were to run a correlation between, simply, the number of Airbnb listings and any of those values, it's likely that larger towns, by virtue of their size, would correlate with higher incomes and property values. Therefore (in excel), I divided the number of listings by the population of the town to render a "Listings per Person" measure for correlation analysis. I did this for every metric of listings that was collected - without zooming in on the map, with one zoom, with two zooms, for the average of those three methods, and for the average of the two zoom methods. 
-
-My best judgement, from looking at the way the Airbnb zoom tool functions, is that the average between the two zoom methods is likely the most accurate way to yield listings by town. However, I will also use the three-way to average in a second correlation, as I judge that is the second most accurate way to determine listings.  
-
-
-```{r cars}
-# read in the data files
-# this data set does not currently include age-related information
-df <- read_csv('merged_data.csv')
-head(df)
-```
-
-First, let's get a feel for the distribution of listings per person by town. 
+My best judgement, from looking at the way the Airbnb zoom tool functions, is that the average between the two zoom methods is the most accurate way to yield listings by town. 
 
 ```{r}
-summary(df$AllMeanPop)
-summary(df$ZoomMeanPop)
+# read in the data files
+income_df <- read_csv('income_merged.csv')
+
+# read in property value df
+propvalue_df <- read.csv('propvalue_merged.csv')
+
+# read in ages data; this will be cleaned up later
+ages_df <- read.csv('ages_merged.csv')
+
+# remove any towns without at least one Airbnb listing as measured by the mean of all three zoom methods or the mean of two zoom methods
+
+pared_income_df <- income_df %>%
+  filter(`3-way Mean Listings` >1,
+         `Zoom - Mean Listings` >1)
+
+pared_propvalue_df <- propvalue_df %>%
+  filter(AllMeanListings >1,
+         ZoomMeanListings >1)
+
+pared_ages_df <- ages_df %>%
+  filter(AllMeansRaw >1,
+         ZoomMeansRaw >1)
 ```
 
-If we take the mean listings between the three methods - no zoom, one zoom, and two zooms - we find that the number of listings per person ranges from 0 to 3.42 with a mean of .178 and a median of 0.052. If we, instead, consider the distribution of listings if we take the mean of the listings returned with one zoom and two zooms, the figures decreased, predictably: they range from 0 to 3.04 listings with a mean value of 0.134 and a median value of 0.022. 
+When the towns with zero listings are weeded out, we're left with 118 towns including income data and age data and 116 towns including property value data. First, let's get a feel for the distribution of listings per person by town. 
 
-The histograms for each method are pictured below. 
-
-```{r, figures-side, fig.show='hold', out.width="50%"}
-
-hist(df$AllMeanPop,col="gray",breaks=30,main="3-Way Mean Airbnb Listings per Person",
-     xlab="Listings",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
-
-hist(df$ZoomMeanPop,col="gray",breaks=30,main="Zoom Mean Airbnb Listings per Person",
-     xlab="Listings",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
-```
-In both cases, the distribution is extremely skewed. In order to run a Pearson's correlation, the data should be normally distributed; a Spearman's correlation is likely to be the better option. But we'll also check if transforming the data shows any improvement. Below, I plot the log transformed histogram of the listing measures. 
-
-```{r, figures-side, fig.show='hold', out.width="50%"}
-
-hist(log10(df$AllMeanPop),breaks=20,col="gray",main="log(3-Way Mean Airbnb Listings per Person)",
-     xlab="log10(Listings)",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
-
-hist(log10(df$ZoomMeanPop),breaks=20,col="gray",main="log(Zoom Mean Airbnb Listings per Person)",
-     xlab="log10(Listings)",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
+```{r}
+summary(pared_income_df$ZoomMeans)
 ```
 
-This transformation helped push the distribution closer to "normal", which enables us to run a Pearson's correlation using the transformed variables.   
+The listings per person range 0.00070 per person, i.e. one listing for every 10,000 people (though, note, no town has more than 2,500 people). The maximum listings per person is over 1 per person, which is in Jardine, MT, a small community next to Gardiner, MT at the north entrance to Yellowstone. The mean listings per person is about 5 per every 100 residents and median listings per person is a bit over 1 per 100 residents. 
 
-I will also plot median household income and median property values to determine if these variables are normally distributed. 
+The histogram for listings per person plotted against median household income by town is visualized below. 
 
-```{r, figures-side, fig.show='hold', out.width="50%"}
-hist(df$income_value,breaks=20,col="gray",main="Median Household Income Values",
-     xlab="Income",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
-
-hist(df$property_value,breaks=20,col="gray",main="Median Property Values",
-     xlab="Property Value",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
+```{r}
+hist(pared_income_df$ZoomMeans,col="gray",breaks=30,main="Airbnb Listings per Person",
+     xlab="Listings Per Person",cex.main=1.2,cex.axis=1,cex.lab=1)
 ```
-Both distributions are right skewed, so - again - I'll take the log transformation with the hope that it will result in a more normal distribution. 
 
-```{r, figures-side, fig.show='hold', out.width="50%"}
-hist(log10(df$income_value),breaks=20,col="gray",main="log(Median Household Income Values)",
-     xlab="log(Income)",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
+The listings per person data is extremely right skewed; many towns have very, very few listings per person while a few towns have many. 
+(Note: I manually verified that Jardine's data is correct). 
 
-hist(log10(df$property_value),breaks=20,col="gray",main="log(Median Property Values)",
-     xlab="log(Property Value)",cex.main=1.8,cex.axis=1.5,cex.lab=1.5)
+Below, I plot median household income and median property values distributions. 
+
+```{r}
+# histograms of median household income and median property values
+
+hist(pared_income_df$income_value,breaks=20,col="gray",main="Median Household Income Values",
+     xlab="Income",cex.main=1.2,cex.axis=1,cex.lab=1)
+
+hist(pared_propvalue_df$property_value,breaks=20,col="gray",main="Median Property Values",
+     xlab="Property Value",cex.main=1.2,cex.axis=1,cex.lab=1)
 ```
-The log transformation successfully removed any right skewness in the data's distribution. 
 
-### Test Assumptions for Pearson's Correlation
+Both of these distributions are also slightly right skewed, but not as badly as the listings per person. All of the variables could be log transformed to help push the distributions towards normal (note: I will do this later on). 
+
+My next task is to clean up the age related data. My current data frame has the number of residents per age band in 2019 as well as the 2019 population figures. I want to combine some age bands so each is roughly 20 years and then divide by the population so that the ages bands are expressed as a percentage of the total population. Else, larger towns would likely exhibit higher figures across all ages. 
+
+```{r}
+# group the age band by about 20 years each
+
+pared_ages_df <- pared_ages_df %>%
+  group_by(town) %>%
+  summarise("under_eighteen" = sum(num_residents[age_band=="Under 5 Years" | age_band == "5 to 17 Years"]),
+            "eighteen_to_thirtyfour" = sum(num_residents[age_band=="18 to 24 Years" | age_band == "25 to 34 Years"]),
+            "thirtyfive_to_fiftyfour" = sum(num_residents[age_band == "35 to 44 Years" | age_band == "45 to 54 Years"]),
+            "fiftyfive_to_seventyfour" = sum(num_residents[age_band == "55 to 59 Years" | age_band == "60 & 61 Years" |age_band == "62 to 64 Years" | age_band == "65 to 74 Years"]),
+            "seventyfive_plus" = sum(num_residents[age_band == "75 Years & Over"]),
+            "population" = (population),
+            "AllMeansRaw" = (AllMeansRaw),
+            "ZoomMeansRaw" = (ZoomMeansRaw),
+            "MaxListingsPerPerson" = ((Listings...No.Zoom)/(num_residents)),
+            "MinListingsPerPerson" = ((Listings...Two.Zoom)/(num_residents)))
+
+# remove the duplicate values
+pared_ages_df <- distinct(pared_ages_df)
+
+# create new columns that capture the percentage of each age band by town and the listings per person
+pared_ages_df <- pared_ages_df %>%
+  group_by(town) %>%
+  mutate("%under_eighteen" = (under_eighteen/population),
+            "%18_to_34" = (eighteen_to_thirtyfour/population),
+            "%35_to_54" = (thirtyfive_to_fiftyfour/population),
+            "%55_to_74" = (fiftyfive_to_seventyfour/population),
+         "%75+" = (seventyfive_plus/population),
+         "AllMeans" = (AllMeansRaw/population),
+         "ZoomMeans" = (ZoomMeansRaw/population))
+
+# round the percentage columns
+pared_ages_df <- pared_ages_df %>%
+  mutate(across(9:15, round, 3))
+
+```
+
+Now I will visualize histograms of all age bands in the data frame across all towns. Note that there are a few extremely small towns who report having more residents in an individual age band than total residents. I chalk this up to data fuzzing on the part of the Census. For my analysis, I will exclude towns who report 100% (or more) of their populations in any one age band.  
+
+```{r}
+# first, filter out any rows which report having 1 or greater in the percentage columns for age bands
+pared_ages_df <- pared_ages_df %>%
+  filter(`%under_eighteen` < 1,
+          `%18_to_34` <1 ,
+         `%35_to_54` < 1, 
+         `%55_to_74` < 1, 
+         `%75+` < 1
+         )
+
+# then visualize the distributions by age band
+par(mfrow=c(3,2))
+
+hist(pared_ages_df$`%under_eighteen`,breaks=20,col="gray",main="Percent of Populations Under 18",
+     xlab="Percent of Population",cex.main=1.2,cex.axis=1,cex.lab=1)
+
+hist(pared_ages_df$`%18_to_34`,breaks=20,col="gray",main="Percent of Population Ages 18 to 34",
+     xlab="Percent of Population",cex.main=1.2,cex.axis=1,cex.lab=1)
+
+hist(pared_ages_df$`%35_to_54`,breaks=20,col="gray",main="Percent of Population Ages 35 go 54",
+     xlab="Percent of Population",cex.main=1.2,cex.axis=1,cex.lab=1)
+
+hist(pared_ages_df$`%55_to_74`,breaks=20,col="gray",main="Percent of Population Ages 55 to 74",
+     xlab="Percent of Population",cex.main=1.2,cex.axis=1,cex.lab=1)
+
+hist(pared_ages_df$`%75+`,breaks=20,col="gray",main="Percent of Population Ages 75 and Up",
+     xlab="Percent of Population",cex.main=1.2,cex.axis=1,cex.lab=1)
+```
+
+For the most part, these distributions are also right skewed. 
+
+### Correlation Analysis Assumptions Test
 
 There are five assumptions that must be met in order to run a valid Pearson's correlation. 
 
 1) The two variables should be measured at the interval or ratio level; all of my variables meet this assumption.
 2) There should be a linear relationship between the two variables; below, I will visualize scatterplots of my data to determine if this assumption is met.
-3) Both variables should be normally distributed; I will use the log transformations of all variables so this requirement is met.
+3) Both variables should be normally distributed; this is not the case unless I log transform the variables.
 4) Each observation in the dataset should have a pair of values; this is the case, because each of my rows of data applies to a single town.
 5) There should be no extreme outliers in the dataset; I will determine if this is the case via the scatterplots below. 
 
+For a Spearman's correlation, which ranks the data piror to doing the correlation, the data does not need to be normally distributed, though it should meet the #1 and #4 assumptions above. This method is robust to outliers and it assumes a monotonic relationship between the variables. 
 
-```{r, figures-side, fig.show='hold', out.width="50%"}
-# scatterplots of the two mean listing methods and income below
+As will be seen in the visualizations below, neither of the correlation methods is a perfect fit for the data, but I judge that the assumptions are sufficiently met to run both analyses. I will conduct both correlations later on. 
 
-plot(log10(AllMeanPop)~log10(income_value),data=df,main = "3-Way Mean", xlab="log(Income)", ylab = "log(3-Way Mean Listings)")
+```{r}
+# scatter plots of the income and property values and listings per person below, respectively
 
-plot(log10(ZoomMeanPop)~log10(income_value),data=df,main = "Zoom Mean", xlab="log(Income)", ylab = "log(Zoom Mean Listings)")
+plot((ZoomMeans)~(income_value),data=pared_income_df,main = "Income and Listings Per Person", xlab="Median Household Income", ylab = "Listings Per Person")
 
-```
-
-```{r, figures-side, fig.show='hold', out.width="50%"}
-# scatterplots of the two mean listing methods and property value below
-
-plot(log10(AllMeanPop)~log10(property_value),data=df,main = "3-Way Mean", xlab="log(Property Value)", ylab = "log(3-Way Mean Listings)")
-
-plot(log10(ZoomMeanPop)~log10(property_value),data=df,main = "Zoom Mean", xlab="log(Property Value)", ylab = "log(Zoom Mean Listings)")
-
-```
-The relationships between the variables do not appear to be linear. The income data, in particular, is randomly distributed. 
-
-RUH-ROH WHAT TO DO???
-
-### Run the Correlation Analysis
-
-```{r pressure, echo=FALSE}
-# run correlations
-# listings vs. income (NOT TRANSFORMED)
-cor(df$AllMeanPop, df$income_value)
-cor(df$ZoomMeanPop, df$income_value)
-
-ggscatter(df, x = "AllMeanPop", y = "income_value", 
-          add = "reg.line", conf.int = TRUE, 
-          cor.coef = TRUE, cor.method = "pearson",
-          xlab = "All Mean Number of Listings per Person", ylab = "Income Value")
-
-ggscatter(df, x = "ZoomMeanPop", y = "income_value", 
-          add = "reg.line", conf.int = TRUE, 
-          cor.coef = TRUE, cor.method = "pearson",
-          xlab = "Zoom Mean Number of Listings per Person", ylab = "Income Value")
-
-
-# listings vs. property value (NOT TRANSFORMED)
-cor(df$AllMeanPop, df$property_value)
-cor(df$ZoomMeanPop, df$property_value)
-
-ggscatter(df, x = "AllMeanPop", y = "property_value", 
-          add = "reg.line", conf.int = TRUE, 
-          cor.coef = TRUE, cor.method = "pearson",
-          xlab = "All Mean Number of Listings per Person", ylab = "Property Value")
-
-ggscatter(df, x = "ZoomMeanPop", y = "property_value", 
-          add = "reg.line", conf.int = TRUE, 
-          cor.coef = TRUE, cor.method = "pearson",
-          xlab = "Zoom Mean Number of Listings per Person", ylab = "Property Value")
+plot((ZoomMeans)~(property_value),data=pared_propvalue_df,main = "Median Property Value and Listings Per Person", xlab="Median Property Value", ylab = "Listings Per Person")
 
 ```
 
+
+```{r}
+# scatter plots of the Zoom mean listing methods and all of the age bands plotted below
+par(mfrow=c(2,2))
+
+plot(ZoomMeans~`%under_eighteen`,data=pared_ages_df,main = "Under 18 and Listings Per Person", xlab="% Under 18", ylab = "Listings Per Person")
+
+plot(ZoomMeans~`%18_to_34`,data=pared_ages_df,main = "18-34 and Listings Per Person", xlab="%Ages 18-34", ylab = "Listings Per Person")
+
+plot(ZoomMeans~`%35_to_54`,data=pared_ages_df,main = "35-54 and Listings Per Person", xlab="%Ages 35-54", ylab = "Listings Per Person")
+
+plot(ZoomMeans~`%55_to_74`,data=pared_ages_df,main = "Listings vs. 55-74", xlab="%Ages 55-74", ylab = "Listings Per Person")
+
+plot(ZoomMeans~`%75+`,data=pared_ages_df,main = "75+ and Listings Per Person", xlab="75 and Older", ylab = "Listings Per Person")
+
+```
+
+There are so many towns with very, very few listings that the non-transformed relationships do not appear to exist - or, at least, are not very linear or monotonic. 
+
+### Spearman's Rank Correlation Analysis
+
+Unlike Pearson's correlation, Spearman's correlation analysis does not assume normality and is robust to outliers. Because my data has outliers and is not normally distributed, a rank correlation is a more appropriate test than Pearson's linear correlation when the data is not transformed. The Spearman correlation measures the monotonic relationship of the variables rather than the linear association of the variables, so it is more reliable with non-linear data.
+
+```{r}
+# run Spearman's correlations for listings per person and income
+
+sp_incomeZoomMeans <- cor.test(pared_income_df$ZoomMeans, pared_income_df$income_value, method = 'spearman')
+sp_incomeZoomMeans
+```
+
+The Spearman's correlation for income and listings per person is not statistically significant. 
+
+```{r}
+# run Spearman's correlations for listings per person and property values
+
+sp_propZoomMeans <- cor.test(pared_propvalue_df$ZoomMeans, pared_propvalue_df$property_value, method = 'spearman')
+sp_propZoomMeans
+
+```
+
+The Spearman's correlation between listings per person and property values is also not significant.  
+
+```{r}
+# run Spearman's correlations for listings per person and the percent of the population under 18
+
+sp_under18ZoomMeans <- cor.test(pared_ages_df$ZoomMeans, pared_ages_df$`%under_eighteen`, method = 'spearman')
+sp_under18ZoomMeans
+```
+
+Spearman's correlation between listings per person and the percent of the population under 18 are moderately, negatively correlated and statistically significant.  
+
+```{r}
+# run Spearman's correlations for listings per person and the percent of the population 18-34 and then 35 to 54, 55-74, and over 75
+
+#18-34 age band
+sp_18to34ZoomMeans <- cor.test(pared_ages_df$ZoomMeans, pared_ages_df$`%18_to_34`, method = 'spearman')
+sp_18to34ZoomMeans
+
+# 35-54 age cohort
+sp_35to54ZoomMeans <- cor.test(pared_ages_df$ZoomMeans, pared_ages_df$`%35_to_54`, method = 'spearman')
+sp_35to54ZoomMeans
+
+# 55-74 age cohort
+sp_55to74ZoomMeans <- cor.test(pared_ages_df$ZoomMeans, pared_ages_df$`%55_to_74`, method = 'spearman')
+sp_55to74ZoomMeans
+
+# 75+ age cohort
+sp_74andoverZoomMeans <- cor.test(pared_ages_df$ZoomMeans, pared_ages_df$`%75+`, method = 'spearman')
+sp_74andoverZoomMeans
+
+```
+
+Listings per person and the percentage of the population between 18 and 34 years old are weakly, negatively correlated and statistically significant. 
+
+There is no significant correlation between listings per person and the percentage of the population ages 35 to 54. 
+
+The correlation between listings per person and the percentage of the population ages 55 to 74 is moderate and positive, and statistically significant.  
+
+The relationship between listings per person and the percentage of the population 75 and older is very weakly negative and statistically significant. 
+
+So, there are statistically significant correlative relationships between listings per person and the following variables:
+1. The percent of the population under 18: moderate, negative relationship
+2. The percent of the population between ages 18 and 34: weak, negative relationship
+3. The percent of the population between ages 55 and 74: moderate, positive relationship
+4. The percent of the population ages 75 and over: very weak, negative relationship
+
+These findings support the idea that Airbnb listings are associated with fewer young people in a populace, fewer families of child-bearing age, and more older/established age cohorts who may have owned homes before Airbnb became an influence.
+
+### Visualize the Results of the Spearman's Correlations
+
+
+```{r}
+# plot of the correlation between listings and % of pop under 18
+
+ggscatter(pared_ages_df, x = "ZoomMeans", y = "%under_eighteen", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "spearman",
+          xlab = "Listings Per Person", ylab = "Percentage of Population Under 18", main = "Spearman's Correlation: Listings per Person and %age of Pop Under 18")
+```
+
+
+
+```{r}
+# plot of the correlation between listings and % of pop 18 to 34
+
+ggscatter(pared_ages_df, x = "ZoomMeans", y = "%18_to_34", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "spearman",
+          xlab = "Listings Per Person", ylab = "Percentage of Population 18 to 34", main = "Spearman's Correlation: Listings per Person and %age of Pop 18-34")
+```
+
+
+
+```{r}
+# plot of the correlation between listings and % of pop ages 55 to 74
+
+ggscatter(pared_ages_df, x = "ZoomMeans", y = "%55_to_74", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "spearman",
+          xlab = "Listings Per Person", ylab = "Percentage of Population 55 to 74", main = "Spearman's Correlation: Listings per Person and %age of 55-74")
+```
+
+
+```{r}
+# plot of the correlation between listings and % of pop ages 75+
+
+ggscatter(pared_ages_df, x = "ZoomMeans", y = "%75+", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "spearman",
+          xlab = "Listings Per Person", ylab = "Percentage of Population 75 and Older", main = "Spearman's Correlation: Listings per Person and %age of Pop 75+")
+```
+
+### Pearson's Correlations
+
+As a final test, I will log transform the variables and take the Pearson's correlations. The log transformation will make the distributions of the variables more normal (as visualized below). The scatter plots of the log transformed variables (also pictured below) are not exactly linear, but they do seem to show a degree of linear relationships. So, these correlation results should be understood with that in mind: the data does not perfectly pass the assumptions for a valid Pearson's correlation, but they are not so far off as to make the test invalid.
+
+Note that the distributions of ages under 18 and 18-34 become less normally distributed with a log transformation. For my correlation analysis, I will not log transform those two variables. 
+
+```{r}
+# distribution of log transformed listings per person
+hist(log10(pared_income_df$ZoomMeans),col="gray",breaks=30,main="Log Transformed Airbnb Listings per Person",
+     xlab="Log (Listings Per Person)",cex.main=1.2,cex.axis=1,cex.lab=1)
+
+# distribution of log transformed property values
+hist(log10(pared_propvalue_df$property_value),col="gray",breaks=30,main="Log Transformed Median Property Values",
+     xlab="Log (Median Property Value)",cex.main=1.2,cex.axis=1,cex.lab=1)
+
+# distribution of log transformed median HH incomes
+hist(log10(pared_income_df$income_value),col="gray",breaks=30,main="Log Transformed Median Household Income Values",
+     xlab="Log (Median HH Income)",cex.main=1.2,cex.axis=1,cex.lab=1)
+
+par(mfrow=c(2,2))
+# log transformed % under 18 values
+hist(log10(pared_ages_df$`%under_eighteen`),col="gray",breaks=30,main="Log Transformed %age under 18",
+     xlab="Log (Listings Per Person)",cex.main=1.2,cex.axis=1,cex.lab=1)
+
+# log transformed % 18-34
+hist(log10(pared_ages_df$`%18_to_34`),col="gray",breaks=30,main="Log Transformed %age 18-34",
+     xlab="Log (Listings Per Person)",cex.main=1.2,cex.axis=1,cex.lab=1)
+
+# log transformed % 35-54
+hist(log10(pared_ages_df$`%35_to_54`),col="gray",breaks=30,main="Log Transformed %age 35-54",
+     xlab="Log (Listings Per Person)",cex.main=1.2,cex.axis=1,cex.lab=1)
+
+# log transformed % 55-74
+hist(log10(pared_ages_df$`%55_to_74`),col="gray",breaks=30,main="Log Transformed %age 55-74",
+     xlab="Log (Listings Per Person)",cex.main=1.2,cex.axis=1,cex.lab=1)
+
+# log transformed % 55-74
+hist(log10(pared_ages_df$`%75+`),col="gray",breaks=30,main="Log Transformed %age 75+",
+     xlab="Log (Listings Per Person)",cex.main=1.2,cex.axis=1,cex.lab=1)
+```
+
+
+
+```{r}
+
+# log transformed listings vs. income 
+plot(log10(ZoomMeans)~(log10(income_value)),data=pared_income_df,main = "Log Transformed Median HH Income and Listings Per Person", xlab="Log(Median Household Income)", ylab = "Log(Listings Per Person)")
+
+# log transformed listings vs. property values
+plot(log10(ZoomMeans)~(log10(property_value)),data=pared_propvalue_df,main = "Log Transformed Median Property Value and Listings Per Person", xlab="Log(Median Property Value)", ylab = "Log(Listings Per Person)")
+```
+
+```{r}
+
+par(mfrow=c(2,2))
+# log transformed listings vs. under 18 
+plot(log10(ZoomMeans)~(`%under_eighteen`),data=pared_ages_df,main = "%age Under 18 and Listings Per Person", xlab="Percent under 18", ylab = "Log(Listings Per Person)")
+
+# log transformed listings vs. 18-34
+plot(log10(ZoomMeans)~(`%18_to_34`),data=pared_ages_df,main = "%age 18-34 and Listings Per Person", xlab="Percent 18-34", ylab = "Log(Listings Per Person)")
+
+# log transformed listings vs. 35-54
+plot(log10(ZoomMeans)~(log10(`%35_to_54`)),data=pared_ages_df,main = "Log Transformed %age 35-54 and Listings Per Person", xlab="Log(percent 35-54)", ylab = "Log(Listings Per Person)")
+
+# log transformed listings vs. 55-74
+plot(log10(ZoomMeans)~(log10(`%55_to_74`)),data=pared_ages_df,main = "Log Transformed %age 55-74 and Listings Per Person", xlab="Log(percent 55-74)", ylab = "Log(Listings Per Person)")
+
+# log transformed listings vs. 75+
+plot(log10(ZoomMeans)~(log10(`%75+`)),data=pared_ages_df,main = "Log Transformed %age 75+ and Listings Per Person", xlab="Log(percent 75+)", ylab = "Log(Listings Per Person)")
+
+```
+
+Now I will run the Pearson's correlations on the transformed variables. 
+
+```{r}
+# first, add columns to the data frames that are the log transformations. 
+
+pared_income_df <- pared_income_df %>%
+  mutate(loglistings = log10(ZoomMeans),
+         logincome = log10(income_value))
+
+pared_propvalue_df <- pared_propvalue_df %>%
+  mutate(loglistings = log10(ZoomMeans),
+         logprop = log10(property_value))
+
+# note that I need to filter out 0, which results in -Inf log transformations
+pared_ages_df <- pared_ages_df %>%
+  mutate(loglistings = log10(ZoomMeans), 
+         log35_54 = log10(`%35_to_54`),
+         log55_74 = log10(`%55_to_74`),
+         log75_plus = log10(`%75+`)) %>%
+  filter(`%35_to_54` != 0,
+         `%55_to_74` != 0,
+         `%75+` != 0)
+
+# then run the Pearson's correlations
+# household income
+pe_incomeZoomMeans <- cor.test(pared_income_df$loglistings,pared_income_df$logincome, method = 'pearson')
+pe_incomeZoomMeans
+
+# property value
+pe_propZoomMeans <- cor.test(pared_propvalue_df$loglistings, pared_propvalue_df$logprop, method = 'pearson')
+pe_propZoomMeans
+
+# under 18 age band
+pe_under18ZoomMeans <- cor.test(pared_ages_df$loglistings, pared_ages_df$`%under_eighteen`, method = 'pearson')
+pe_under18ZoomMeans
+
+#18-34 age band
+pe_18to34ZoomMeans <- cor.test(pared_ages_df$loglistings, pared_ages_df$`%18_to_34`, method = 'pearson')
+pe_18to34ZoomMeans
+
+# 35-54 age cohort
+pe_35to54ZoomMeans <- cor.test(pared_ages_df$loglistings, pared_ages_df$log35_54, method = 'pearson')
+pe_35to54ZoomMeans
+
+# 55-74 age cohort
+pe_55to74ZoomMeans <- cor.test(pared_ages_df$loglistings, pared_ages_df$log55_74, method = 'pearson')
+pe_55to74ZoomMeans
+
+# 75+ age cohort
+pe_75plusZoomMeans <- cor.test(pared_ages_df$loglistings, pared_ages_df$log75_plus, method = 'pearson')
+pe_75plusZoomMeans
+```
+
+For the Pearson's correlations, we have statistically significant results for the following relationships:
+1. Log transformed listings per person and the percentage of the population under 18: moderate, negative relationship
+2. Log transformed listings per person and percentage of population between 18 and 34 years old: slight, negative relationship
+3. Log transformed listings per person and the log transformed percentage of the population between 35 and 54 years old: extremely slight (negligible) negative relationship
+4. Log transformed listings per person and log transformed percentage of population between 55 and 74 years old: moderate, positive relationship
+
+
+So, our Pearson's correlation analysis roughly aligns with the Spearman's correlation analysis. In both tests, there is a negative relationship between having more listings per person in a town and a younger population, while there is a positive relationship between more listings in a town and an older population. 
+
+### Visualize the Results of the Pearson's Correlations
+
+```{r}
+# plot of the correlation between listings and % of pop under 18
+
+ggscatter(pared_ages_df, x = "loglistings", y = "%under_eighteen", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Log Listings Per Person", ylab = "Percentage of Population Under 18", main = "Pearson's Correlation: Listings per Person and %age of Pop Under 18")
+
+ggscatter(pared_ages_df, x = "loglistings", y = "%18_to_34", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Log Listings Per Person", ylab = "Percentage of Population 18-34", main = "Pearson's Correlation: Listings per Person and %age of Pop 18-34")
+
+
+ggscatter(pared_ages_df, x = "loglistings", y = "log35_54", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Log Listings Per Person", ylab = "Log Percentage of Population 35-54", main = "Pearson's Correlation: Listings per Person and %age of Pop 35-54")
+
+ggscatter(pared_ages_df, x = "loglistings", y = "log55_74", 
+          add = "reg.line", conf.int = TRUE, 
+          cor.coef = TRUE, cor.method = "pearson",
+          xlab = "Log Listings Per Person", ylab = "Log Percentage of Population 55-74", main = "Pearson's Correlation: Listings per Person and %age of Pop 55-74")
+```
+
+
+
+
+```{r}
+# export data frames to csv
+write.csv(pared_income_df,"pared_income.csv", row.names = FALSE)
+write.csv(pared_propvalue_df,"pared_propvalue.csv", row.names = FALSE)
+write.csv(pared_ages_df,"pared_ages.csv", row.names = FALSE)
+```
 

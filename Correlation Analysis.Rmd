@@ -161,7 +161,7 @@ hist(pared_ages_df$`%75+`,breaks=20,col="gray",main="Percent of Population Ages 
      xlab="Percent of Population",cex.main=1.2,cex.axis=1,cex.lab=1)
 ```
 
-For the most part, these distributions are also right skewed. 
+Each of these distributions are also right skewed, though populations under 18 and between 35 adn 54 are much less skewed than the other cohorts. 
 
 ### Correlation Analysis Assumptions Test
 
@@ -322,8 +322,6 @@ ggscatter(pared_ages_df, x = "ZoomMeans", y = "%75+",
 
 As a final test, I will log transform the variables and take the Pearson's correlations. The log transformation will make the distributions of the variables more normal (as visualized below). The scatter plots of the log transformed variables (also pictured below) are not exactly linear, but they do seem to show a degree of linear relationships. So, these correlation results should be understood with that in mind: the data does not perfectly pass the assumptions for a valid Pearson's correlation, but they are not so far off as to make the test invalid.
 
-Note that the distributions of ages under 18 and 18-34 become less normally distributed with a log transformation. For my correlation analysis, I will not log transform those two variables. 
-
 ```{r}
 # distribution of log transformed listings per person
 hist(log10(pared_income_df$ZoomMeans),col="gray",breaks=30,main="Log Transformed Airbnb Listings per Person",
@@ -373,11 +371,11 @@ plot(log10(ZoomMeans)~(log10(property_value)),data=pared_propvalue_df,main = "Lo
 ```{r}
 
 par(mfrow=c(2,2))
-# log transformed listings vs. under 18 
-plot(log10(ZoomMeans)~(`%under_eighteen`),data=pared_ages_df,main = "%age Under 18 and Listings Per Person", xlab="Percent under 18", ylab = "Log(Listings Per Person)")
+# log transformed listings vs. log transformed under 18 
+plot(log10(ZoomMeans)~(log10(`%under_eighteen`)),data=pared_ages_df,main = "Log Transformed: %age Under 18 and Listings Per Person", xlab="Log(Percent under 18)", ylab = "Log(Listings Per Person)")
 
 # log transformed listings vs. 18-34
-plot(log10(ZoomMeans)~(`%18_to_34`),data=pared_ages_df,main = "%age 18-34 and Listings Per Person", xlab="Percent 18-34", ylab = "Log(Listings Per Person)")
+plot(log10(ZoomMeans)~(log10(`%18_to_34`)),data=pared_ages_df,main = "Log Transformed %age 18-34 and Listings Per Person", xlab="Log(Percent 18-34)", ylab = "Log(Listings Per Person)")
 
 # log transformed listings vs. 35-54
 plot(log10(ZoomMeans)~(log10(`%35_to_54`)),data=pared_ages_df,main = "Log Transformed %age 35-54 and Listings Per Person", xlab="Log(percent 35-54)", ylab = "Log(Listings Per Person)")
@@ -405,11 +403,15 @@ pared_propvalue_df <- pared_propvalue_df %>%
 
 # note that I need to filter out 0, which results in -Inf log transformations
 pared_ages_df <- pared_ages_df %>%
-  mutate(loglistings = log10(ZoomMeans), 
+  mutate(loglistings = log10(ZoomMeans),
+         logunder18 = log10(`%under_eighteen`),
+         log18_34 = log10(`%18_to_34`),
          log35_54 = log10(`%35_to_54`),
          log55_74 = log10(`%55_to_74`),
          log75_plus = log10(`%75+`)) %>%
-  filter(`%35_to_54` != 0,
+  filter(`%under_eighteen` != 0,
+        `%18_to_34` != 0,
+        `%35_to_54` != 0,
          `%55_to_74` != 0,
          `%75+` != 0)
 
@@ -423,11 +425,11 @@ pe_propZoomMeans <- cor.test(pared_propvalue_df$loglistings, pared_propvalue_df$
 pe_propZoomMeans
 
 # under 18 age band
-pe_under18ZoomMeans <- cor.test(pared_ages_df$loglistings, pared_ages_df$`%under_eighteen`, method = 'pearson')
+pe_under18ZoomMeans <- cor.test(pared_ages_df$loglistings, pared_ages_df$logunder18, method = 'pearson')
 pe_under18ZoomMeans
 
 #18-34 age band
-pe_18to34ZoomMeans <- cor.test(pared_ages_df$loglistings, pared_ages_df$`%18_to_34`, method = 'pearson')
+pe_18to34ZoomMeans <- cor.test(pared_ages_df$loglistings, pared_ages_df$log18_34, method = 'pearson')
 pe_18to34ZoomMeans
 
 # 35-54 age cohort
@@ -445,7 +447,7 @@ pe_75plusZoomMeans
 
 For the Pearson's correlations, we have statistically significant results for the following relationships:
 1. Log transformed listings per person and the percentage of the population under 18: moderate, negative relationship
-2. Log transformed listings per person and percentage of population between 18 and 34 years old: slight, negative relationship
+2. Log transformed listings per person and percentage of population between 18 and 34 years old: weak, negative relationship
 3. Log transformed listings per person and the log transformed percentage of the population between 35 and 54 years old: extremely slight (negligible) negative relationship
 4. Log transformed listings per person and log transformed percentage of population between 55 and 74 years old: moderate, positive relationship
 
@@ -457,15 +459,15 @@ So, our Pearson's correlation analysis roughly aligns with the Spearman's correl
 ```{r}
 # plot of the correlation between listings and % of pop under 18
 
-ggscatter(pared_ages_df, x = "loglistings", y = "%under_eighteen", 
+ggscatter(pared_ages_df, x = "loglistings", y = "logunder18", 
           add = "reg.line", conf.int = TRUE, 
           cor.coef = TRUE, cor.method = "pearson",
-          xlab = "Log Listings Per Person", ylab = "Percentage of Population Under 18", main = "Pearson's Correlation: Listings per Person and %age of Pop Under 18")
+          xlab = "Log Listings Per Person", ylab = "Log % of Population Under 18", main = "Pearson's Correlation: Listings per Person and %age of Pop Under 18")
 
-ggscatter(pared_ages_df, x = "loglistings", y = "%18_to_34", 
+ggscatter(pared_ages_df, x = "loglistings", y = "log18_34", 
           add = "reg.line", conf.int = TRUE, 
           cor.coef = TRUE, cor.method = "pearson",
-          xlab = "Log Listings Per Person", ylab = "Percentage of Population 18-34", main = "Pearson's Correlation: Listings per Person and %age of Pop 18-34")
+          xlab = "Log Listings Per Person", ylab = "Log % of Population 18-34", main = "Pearson's Correlation: Listings per Person and %age of Pop 18-34")
 
 
 ggscatter(pared_ages_df, x = "loglistings", y = "log35_54", 

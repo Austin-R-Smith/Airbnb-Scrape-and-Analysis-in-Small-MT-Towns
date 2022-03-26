@@ -166,7 +166,7 @@ pre code {
 
 <h1 class="title toc-ignore">Airbnb Correlation Analysis</h1>
 <h4 class="author">Austin Smith</h4>
-<h4 class="date">13 March, 2022</h4>
+<h4 class="date">26 March, 2022</h4>
 
 </div>
 
@@ -212,6 +212,10 @@ pared_ages_df &lt;- ages_df %&gt;%
 <pre class="r"><code>summary(pared_income_df$ZoomMeans)</code></pre>
 <pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
 ## 0.00070 0.00550 0.01360 0.04684 0.03243 1.07890</code></pre>
+<pre class="r"><code>top_15 &lt;- pared_income_df %&gt;%
+  top_n(15,ZoomMeans) %&gt;%
+  select(town, ZoomMeans) %&gt;%
+  rename(&quot;Listings Per Resident&quot; = ZoomMeans) </code></pre>
 <p>The listings per person range 0.00070 per person, i.e. one listing for every 10,000 people (though, note, no town has more than 2,500 people). The maximum listings per person is over 1 per person, which is in Jardine, MT, a small community next to Gardiner, MT at the north entrance to Yellowstone. The mean listings per person is about 5 per every 100 residents and median listings per person is a bit over 1 per 100 residents.</p>
 <p>The histogram for listings per person plotted against median household income by town is visualized below.</p>
 <pre class="r"><code>hist(pared_income_df$ZoomMeans,col=&quot;gray&quot;,breaks=30,main=&quot;Airbnb Listings per Person&quot;,
